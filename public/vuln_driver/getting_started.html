@@ -1,11 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Getting Started</title>
-</head>
-<body>
-Coming Soon!
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+    <style>
+      .code_example {
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>What is a Device Driver?</h1>
+
+    <p>
+      A <b>device driver</b> is software that lies between the application and
+      the device. These device drivers provide a uniform interface to interact
+      with the hardware. In UNIX specifically, hardware devices are accessed
+      through device files, hence the the common linux-ism,
+      <q>everything is a file</q>.
+    </p>
+
+    <div class="code_example">
+      <pre><code>
+      int main(void) {
+        int handle = open("/dev/fb0", O_RDONLY);
+        if (handle == -1)
+          perror("unable to open '/dev/fb0'");
+      }
+    </code></pre>
+    </div>
+
+    <p>
+      As seen above, the method in which you interact with a device file is the
+      same as you would a normal file.
+    </p>
+
+    <h1>The Need for Device Drivers</h1>
+
+    <p>Imagine a</p>
+  </body>
 </html>
